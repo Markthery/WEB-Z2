@@ -1,0 +1,142 @@
+/* ---------- Карточка виджета ---------- */
+.widget {
+  background: var(--w-bg, #fff);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 6px 6px 0 var(--ink);
+  overflow: hidden;
+}
+.widget[data-color='pink'] { --w-bg: var(--pink); }
+.widget[data-color='lime'] { --w-bg: var(--lime); }
+.widget[data-color='blue'] { --w-bg: var(--blue); }
+.widget[data-color='yellow'] { --w-bg: var(--yellow); }
+.widget[data-color='purple'] { --w-bg: var(--purple); }
+
+.widget__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 12px 20px;
+  background: var(--ink);
+  color: #fff;
+}
+.widget__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.widget__controls { display: flex; gap: 6px; flex-shrink: 0; }
+.widget__btn {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.widget__btn:hover { background: #fff; color: var(--ink); }
+.widget__btn:focus-visible { outline-color: #fff; }
+
+.widget__body { padding: 20px; }
+.widget.is-minimized .widget__body { display: none; }
+
+/* ---------- Общие элементы ---------- */
+.field {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 16px;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: 600 15px var(--font-body);
+}
+
+.btn {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font: 800 14px var(--font-display);
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 #fff; }
+.btn:focus-visible { outline-color: var(--ink); }
+.btn--wide { width: 100%; margin-top: 16px; }
+.btn--swap { display: block; margin: 8px auto; padding: 4px 16px; }
+
+.icon-btn {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: transparent;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+.icon-btn:hover { background: var(--ink); color: #fff; }
+
+.inline-form { display: flex; gap: 8px; margin-bottom: 14px; }
+.label { display: block; margin-bottom: 12px; font-weight: 800; font-size: 14px; }
+.label .field { margin-top: 6px; }
+.muted { margin: 6px 0 0; font-size: 14px; font-weight: 600; }
+.status { min-height: 1.4em; margin: 0 0 8px; font-weight: 700; font-size: 14px; }
+.status.is-error { padding: 8px 12px; border: 2px solid var(--ink); border-radius: 14px; background: #fff; }
+
+/* ---------- ToDo ---------- */
+.progress { height: 14px; border: 3px solid var(--ink); border-radius: 999px; background: #fff; overflow: hidden; }
+.progress__bar { height: 100%; width: 0; background: var(--ink); transition: width 0.3s; }
+
+.todo-list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px 8px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  background: #fff;
+}
+.todo-item label { display: flex; align-items: center; gap: 10px; flex: 1; font-weight: 600; cursor: pointer; overflow-wrap: anywhere; }
+.todo-item input { width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--ink); }
+.todo-item.is-done span { text-decoration: line-through; opacity: 0.5; }
+
+/* ---------- Цитата ---------- */
+.quote { margin: 0; padding: 18px; border: 3px solid var(--ink); border-radius: 20px; background: #fff; }
+.quote__text { margin: 0 0 12px; font-family: var(--font-display); font-weight: 500; font-size: 18px; line-height: 1.35; }
+.quote__author { font-weight: 800; font-size: 14px; }
+
+/* ---------- Обратный отсчёт ---------- */
+.countdown { display: flex; align-items: center; gap: 16px; margin-top: 8px; padding: 14px 18px; border: 3px solid var(--ink); border-radius: 20px; background: #fff; }
+.countdown__num { font-family: var(--font-display); font-weight: 900; font-size: 56px; line-height: 1; }
+.countdown__text { font-weight: 800; }
+
+/* ---------- Погода ---------- */
+.weather__now { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border: 3px solid var(--ink); border-radius: 20px; background: #fff; }
+.weather__icon { font-size: 48px; line-height: 1; }
+.weather__temp { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: 40px; line-height: 1; }
+.weather__desc { margin: 4px 0 0; font-weight: 600; font-size: 14px; }
+.weather__days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
+.weather__days li { display: grid; gap: 2px; justify-items: center; padding: 8px 2px; border: 2px solid var(--ink); border-radius: 14px; background: #fff; font-size: 12px; font-weight: 800; text-align: center; }
+.weather__days b { font-size: 22px; }
+
+/* ---------- Валюта ---------- */
+.currency__row { display: grid; grid-template-columns: 1fr 100px; gap: 8px; align-items: center; }
+.currency__result { overflow: hidden; padding: 6px 4px; font-family: var(--font-display); font-weight: 900; font-size: 26px; text-overflow: ellipsis; white-space: nowrap; }
+.currency__rate { margin-top: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .progress__bar { transition: none; }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вализа — дашборд путешественника</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <div class="sheet">
+
+    <header class="hero">
+      <p class="hero__kicker">Дашборд путешественника</p>
+      <h1 class="hero__title">Вализа</h1>
+      <p class="hero__lead">Погода, курсы валют, чек-лист вещей и обратный отсчёт до вылета — всё для вашей поездки на одной странице.</p>
+      <span class="sticker sticker--plane" aria-hidden="true">✈️</span>
+      <span class="sticker sticker--star" aria-hidden="true">★</span>
+      <span class="sticker sticker--pin" aria-hidden="true">📍</span>
+    </header>
+
+    <div class="ticker-zone" aria-hidden="true">
+      <div class="ticker ticker--a"><div class="ticker__track" data-ticker></div></div>
+      <div class="ticker ticker--b"><div class="ticker__track ticker__track--reverse" data-ticker></div></div>
+    </div>
+
+    <section class="band" aria-labelledby="toolbar-title">
+      <h2 id="toolbar-title" class="band__title">Соберите свою поездку</h2>
+      <div class="toolbar" id="toolbar">
+        <button class="tag tag--pink" type="button" data-add="countdown">+ Обратный отсчёт</button>
+        <button class="tag tag--lime" type="button" data-add="todo">+ Чек-лист вещей</button>
+        <button class="tag tag--blue" type="button" data-add="weather">+ Погода</button>
+        <button class="tag tag--yellow" type="button" data-add="currency">+ Курс валют</button>
+        <button class="tag tag--purple" type="button" data-add="quote">+ Цитата</button>
+        <button class="tag tag--ghost" type="button" data-action="clear">Убрать все</button>
+      </div>
+      <p class="band__count">Виджетов на панели: <strong id="widget-count">0</strong></p>
+    </section>
+
+    <main class="board">
+      <div id="dashboard"></div>
+    </main>
+
+    <footer class="footer">
+      <p>Погода — Open-Meteo · Курсы валют — ExchangeRate-API · Данные виджетов хранятся в вашем браузере. Крылова Ксения 2026. 5-МВ-5</p>
+    </footer>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
